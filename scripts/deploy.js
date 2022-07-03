@@ -2,11 +2,11 @@ const { ethers, run, network } = require("hardhat")
 
 async function main() {
     // Deploy contract
-    const SimpleStorageFactory = await ethers.getContractFactory(
+    const simpleStorageFactory = await ethers.getContractFactory(
         "SimpleStorage"
     )
     console.log("Deploying contract...")
-    const simpleStorage = await SimpleStorageFactory.deploy()
+    const simpleStorage = await simpleStorageFactory.deploy()
     await simpleStorage.deployed()
     console.log(`Deployed contract to: ${simpleStorage.address}`)
     // If we're on a test net, then verify contract
